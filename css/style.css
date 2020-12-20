@@ -1,0 +1,16 @@
+.class-gallery {
+  display: flex;
+  height: 100px;
+  align-items: center;
+}
+
+.class-li {
+  max-height: 100px;
+  width: auto;
+}
+
+.class-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

@@ -7,17 +7,11 @@ const ingredients = [
   "Приправы",
 ];
 
-const listIng = document.createElement("ul");
-listIng.textContent = "ingredients";
+const listIng = document.querySelector("#ingredients");
 
-const createList = (ingredient) => {
+const createList = ingredients.map((ingredient) => {
   const liElem = document.createElement("li");
   liElem.textContent = ingredient;
-  //return liElem;
-};
-
-// liElem.textContent = ingredients.map((ingredient) => ingredient);
-// listIng.append(liElem);
-// console.log(listIng);
-const ingrList = ingredients.map((ingredient) => createList(ingredient));
-console.log(ingrList);
+  return liElem;
+});
+listIng.append(...createList);
