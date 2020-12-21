@@ -1,8 +1,6 @@
-const changeSize = function () {
-  const s = 1;
-};
-
 const elemInput = document.querySelector("#font-size-control");
-const elemSpam = document.querySelector("#text");
-
+const elemSpan = document.querySelector("#text");
+const changeSize = function () {
+  elemSpan.style.fontSize = elemInput.value + "px";
+};
 elemInput.addEventListener("input", changeSize);
