@@ -1,11 +1,11 @@
 .class-gallery {
   display: flex;
-  height: 100px;
+  height: 300px;
   align-items: center;
 }
 
 .class-li {
-  max-height: 100px;
+  max-height: 300px;
   width: auto;
 }
 
