@@ -12,19 +12,33 @@ function generateRandomColor() {
   return randomColor;
 }
 
-const createBoxes = function (amount) {
-  const arrayBoxes = [];
-  for (let i = 0; i < amount; i += 1) {
-    const box = document.createElement("div");
-    box.style.backgroundColor = generateRandomColor();
-    box.style.width = elemDiv.style.height = 30 + (amount - 1) * 10 + "px";
-    arrayBoxes.push[box];
-  }
-  return boxContainer.append(...arrayBoxes);
+const handlerClick = function () {
+  createBoxes(elemInput.value);
 };
 
-//const destroyBoxes () = function {
-//    let Boxes = [];
-//};
-btnCreate.addEventListener("click", createBoxes());
-//btnDestroy.addEventListener("click", destroyBoxes);
+const createBoxes = function (amount) {
+  let arrayBoxes = new Array(Number(amount)).fill(0);
+  //   for (let i = 1; i <= amount; i += 1) {
+  //     const box = document.createElement("div");
+  //     box.style.backgroundColor = generateRandomColor();
+  //     box.style.width = box.style.height = 30 + (i - 1) * 10 + "px";
+  //     arrayBoxes.push(box);
+  //   }
+  //   boxContainer.append(...arrayBoxes);
+
+  arrayBoxes.forEach(function (elemDiv, idx, array) {
+    array[idx] = document.createElement("div");
+    array[idx].style.backgroundColor = generateRandomColor();
+    array[idx].style.width = array[idx].style.height = 30 + idx * 10 + "px";
+  });
+  boxContainer.append(...arrayBoxes);
+};
+
+const destroyBoxes = function () {
+  const arrayDiv = boxContainer.querySelectorAll("div");
+  for (let i = 0; i < arrayDiv.length; i += 1) {
+    boxContainer.removeChild(arrayDiv[i]);
+  }
+};
+btnCreate.addEventListener("click", handlerClick);
+btnDestroy.addEventListener("click", destroyBoxes);
